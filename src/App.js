@@ -46,6 +46,7 @@ class App extends Component{
 
   sellVehicle = (id, soldPrice) => {
     this.sale(soldPrice);
+    // console.log(id)
     axios.delete(`/api/vehicleSold/${id}`)
     .then(res => {
       this.setState({carInventory: res.data})
@@ -54,6 +55,7 @@ class App extends Component{
     
   }
 
+//for money tracker
   buy = (price) => {
     this.setState({bank: this.state.bank - +price})
 
@@ -66,10 +68,10 @@ class App extends Component{
     return(
       <div className='App'>
         <Header />
-        <Bank 
-          bank={this.state.bank}/>
         <Finder 
           purchaseFn={this.purchaseVehicle}
+          bank={this.state.bank}/>
+        <Bank 
           bank={this.state.bank}/>
         <CarLot
           carInventory={this.state.carInventory} 

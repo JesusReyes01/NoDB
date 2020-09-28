@@ -10,7 +10,7 @@ const CarLot = props => {
                 sellFn={props.sellFn}/>
         ))
     return(
-        <div>
+        <div className='inv-section'>
             <h1>Inventory</h1>
             <div className='inventory-flex'>
                 {mappedInventory}

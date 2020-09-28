@@ -4,8 +4,8 @@ class Bank extends Component{
     
    render(){
         return(
-            <div>
-                <h1>Money in the Bank: ${this.props.bank}</h1>
+            <div className='bank'>
+                <h1>Bank: ${this.props.bank}</h1>
             </div>
         ) 
    }

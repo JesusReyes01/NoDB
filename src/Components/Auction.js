@@ -10,8 +10,9 @@ export default class Auction extends Component{
             price: car.price,
             image: car.image
         }
-        console.log(newInventory)
+        
         this.props.purchaseFn(newInventory);
+        this.props.removeAuctionVehicleFn(car.id);
         this.props.refreshFn();
         
     }
@@ -24,15 +25,33 @@ export default class Auction extends Component{
 
     render(){
         return(
-            <div onClick={this.props.bank > this.props.car.price ? this.handleCatch : this.handleRefresh}>
+            <div 
+                onClick={
+                    this.props.car 
+                    ? this.props.bank > this.props.car.price ? this.handleCatch : this.handleRefresh
+                    : null    
+                }
+            >
+
+                {
+                    this.props.car
+                    ?(
+                        <>
+                        <img src={this.props.car.image} alt={this.props.car.model}/>
+                        <div className='auction-vehicle-desc'>
+                            <span>${this.props.car.price}</span>
+                            <span>{this.props.car.make}</span>
+                            <span>{this.props.car.model}</span>
+                            <span>{this.props.car.year}</span>
+                            </div>
+
+                        </>
+                    )
+                    : null
                 
-                <img src={this.props.car.image} alt={this.props.car.model}/>
-                <div className='auction-vehicle-desc'>
-                    <span>${this.props.car.price}</span>
-                    <span>{this.props.car.make}</span>
-                    <span>{this.props.car.model}</span>
-                    <span>{this.props.car.year}</span>
-                </div>
+                    
+                }
+                
 
 
             </div>

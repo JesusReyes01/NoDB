@@ -8,7 +8,8 @@ app.use(express.json());//middle ware lets you use req.body
 app.listen(7777, () => console.log('Server is running on 7777'))
 
 //auctionCtrl endpoints
-app.get('/api/auctionVehicles', auctionCtrl.getAuctionVehicles )
+app.get('/api/auctionVehicles', auctionCtrl.getAuctionVehicles );
+app.delete('/api/auctionVehicles/:id', auctionCtrl.deleteAuctionVehicle);
 
 //vehicleCtrl endpoints
 app.get('/api/getInventory', vehicleCtrl.getInventory);

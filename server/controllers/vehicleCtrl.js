@@ -28,6 +28,7 @@ module.exports = {
         const index = vehiclesInCarLot.findIndex(el => el.id === +id)
         vehiclesInCarLot.splice(index,1)
         res.status(200).send(vehiclesInCarLot);
+        
     }
     
     

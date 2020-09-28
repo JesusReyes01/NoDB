@@ -19,23 +19,40 @@ export default class Finder extends Component{
         })
         .catch(err => console.log(err));
     }
+    removeAuctionVehicle = (id) => {
+        // console.log(id)
+        axios.delete(`/api/auctionVehicles/${id}`)
+        .then(res => {
+          this.setState({auctionVehicles: res.data})
+        })
+        .catch(err => console.log(err));
+        
+    }
+    
     
 
     render(){
-        const mappedVehicles = this.state.auctionVehicles.map( (car,i)=>(
+        let mappedVehicles = <p>No more vehicles!</p>
+        if (this.state.auctionVehicles.length > 0){
+            mappedVehicles = this.state.auctionVehicles.map( (car,i)=>(
         
                 <Auction 
                 key={i}
                 car={car}
                 purchaseFn={this.props.purchaseFn}
                 refreshFn={this.newAuctionVehicles}
+                removeAuctionVehicleFn={this.removeAuctionVehicle}
                 bank={this.props.bank}
                 />
-        ))
+        ))}
+        
         
         return(
             <div className='auction-vehicle-flex'>
-                {mappedVehicles}
+                <h1>Auction</h1>
+                <div className='mappedVehicles'>{mappedVehicles}</div>
+                <button onClick={this.newAuctionVehicles}>REFRESH</button>
+                
             </div>
 
         )

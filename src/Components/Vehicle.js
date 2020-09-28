@@ -18,7 +18,6 @@ export default class Vehicle extends Component{
     }
     handleEdit = (id) => {
         this.props.editFn(id, this.state.priceInput);
-        console.log(this.state.priceInput)
         this.handleToggle();
     }
    
@@ -32,7 +31,7 @@ export default class Vehicle extends Component{
                 (
                     <div>
                         <input
-                            value={this.state.priceInput} //erase later
+                            //value={this.state.priceInput} //erase later
                             onChange={e => this.handleInput(e.target.value)}></input>
                         <button onClick={() => this.handleEdit(this.props.car.id)}>Submit</button>
 

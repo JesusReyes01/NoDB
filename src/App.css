@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display:flex;
+  flex-direction: column;
 }
 
 img{
@@ -12,15 +14,19 @@ img{
 }
 .auction-vehicle-flex{
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
+  /* flex-direction: row; */
   justify-content: space-around;
   align-items: center;
+  background: lightgray;
+  height: 400px;
 }
 .inventory-flex{
   display:flex;
-  flex-direction: row;
+  flex-wrap:wrap;
   justify-content: space-around;
   align-items: center;
+  
 }
 .inventory-desc{
   display:flex;
@@ -29,5 +35,27 @@ img{
 .inv{
   display:flex;
   flex-direction: column;
+  
 
+}
+.mappedVehicles{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  width: 100vw;
+}
+.hdr{
+  background: gray;
+
+}
+.bank{
+  background: gray;
+}
+.inv-section{
+  background:lightgray;
+  min-height: 350px;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
 }
