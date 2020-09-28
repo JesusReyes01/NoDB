@@ -29,6 +29,7 @@ export default class Finder extends Component{
                 car={car}
                 purchaseFn={this.props.purchaseFn}
                 refreshFn={this.newAuctionVehicles}
+                bank={this.props.bank}
                 />
         ))
         

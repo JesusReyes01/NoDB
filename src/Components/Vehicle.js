@@ -48,7 +48,7 @@ export default class Vehicle extends Component{
                         <button onClick={this.handleToggle}>Change Price</button>
                     </div>
                 )}
-                <button onClick={() => this.props.sellFn(this.props.car.id)}>Sell</button>
+                <button onClick={() => this.props.sellFn(this.props.car.id, this.props.car.price)}>Sell</button>
                 
                 
 

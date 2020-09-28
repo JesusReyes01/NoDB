@@ -15,12 +15,16 @@ export default class Auction extends Component{
         this.props.refreshFn();
         
     }
+    handleRefresh = () => {
+        alert("Not enough funds!")
+        this.props.refreshFn();
+    }
     
 
 
     render(){
         return(
-            <div onClick={this.handleCatch}>
+            <div onClick={this.props.bank > this.props.car.price ? this.handleCatch : this.handleRefresh}>
                 
                 <img src={this.props.car.image} alt={this.props.car.model}/>
                 <div className='auction-vehicle-desc'>
